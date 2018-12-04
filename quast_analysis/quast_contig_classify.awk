@@ -93,9 +93,9 @@ END {
     }
     else { ; }
 
-    printf( "Total contig num is %u \n", total_contig );
-    printf( "Total contig map is %u \n", total_map);
-    printf( "Unique contig num is %u \n", unique_contig);
-    printf( "Other contig num is %u \n", other_contig );
-    printf( "Other contig map is %u \n", other_map);
+    printf( "Total   contig num is %u \n", total_contig );
+    printf( "Total   contig map is %u \n", total_map);
+    printf( "Unique  contig num is %u \n", unique_contig);
+    printf( "Other   contig num is %u \n", other_contig );
+    printf( "Other   contig map is %u \n", other_map);
 }
