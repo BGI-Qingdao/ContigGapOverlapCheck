@@ -15,6 +15,10 @@ BEGIN {
     contain_num = 0;
     total_num = 0 ;
     ref_num=0;
+    print "" >gap_file
+    print "" >overlap_file
+    print "" >contain_file
+
 }
 {
     curr_ref=$5
