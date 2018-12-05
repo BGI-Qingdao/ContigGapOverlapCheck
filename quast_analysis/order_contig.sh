@@ -9,4 +9,4 @@ awk -f overlap_detect.awk <sorted_unique_contig.txt
 ## print hist
 cat overlap_info.txt | awk '{ if(NF>1){ print $18}}' | sort | uniq -c |  sort -nk 2 >overlap_hist.txt
 cat gap_info.txt | awk '{ if(NF>1)  {print $18}}' | sort | uniq -c |  sort -nk 2 >gap_hist.txt
-cat contain_info.txt | awk '{ if(NF>1) {print $18}' | sort | uniq -c |  sort -nk 2 >contain_hist.txt
+cat contain_info.txt | awk '{ if(NF>1) {print $18}}' | sort | uniq -c |  sort -nk 2 >contain_hist.txt
