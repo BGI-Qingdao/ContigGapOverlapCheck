@@ -1,0 +1,24 @@
+BERIEF  :
+    Analysis the quast file and report details of contigs.
+
+USAGE   :
+    ./order_contig.sh  QUAST_OUTPUT_PATH/contigs_reports/all_alignments_sz.tsv
+
+
+OUTPUT  :
+
+    1. this script will print basic details like
+
+            Total   contig num is 6002
+            Total   contig map is 6273
+            Unique  contig num is 5809
+            Other   contig num is 193
+            Other   contig map is 451
+             Ref        num 1
+             Total      num 5808
+             Gap        num 2750
+             Overlap    num 3048
+             Contain    num 10
+
+
+    2. you can find details in each file.
