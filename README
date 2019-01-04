@@ -22,3 +22,28 @@ OUTPUT  :
 
 
     2. you can find details in each file.
+    
+____________________________________________________________________
+
+            简介
+目的：
+    基于quast对contig的评估结果，对contig的各种信息进行提取，从而为后续分析提供基础数据准备。
+    
+输入：
+    quast输出目录下的contigs_reports/all_alignments_xxx.tsv
+    
+处理和输出：
+a)	输入中包含只1条匹配信息的contig。输出到unique_contig.tsv
+    i.	这些contig被按照染色体和比对位置排序，输入文件 sorted_unique_contig.txt 。 （这是一个很多其他分析得直接输入）
+    ii.	这些contig按照ref上1阶相邻得关系再次被分类
+        1.	overlap关系，输出到：
+            a)	overlap_info.txt
+            b)	overlap_hist.txt
+        2.	gap关系，输出到：
+            a)	gap_info.txt
+            b)	gap_hist.txt
+        3.	contained关系，输出到：
+            a)	contain_hist.txt
+            b)	contain_info.txt
+b)	输入中包含超过1条匹配信息的contig。输出到other_contig.tsv
+
