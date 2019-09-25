@@ -35,10 +35,12 @@ BEGIN {
     {
         if ( $1 == "CONTIG" )
         {
+            total_map=total_map+1;
+
             contig_name =  $2;
             contig_len = $3;
             contig_type= $4;
-            if( contig_type != "correct" )
+            if( contig_type == "correct" )
             {
                 if( arrayIndex == 0 )
                 {
@@ -83,7 +85,7 @@ BEGIN {
                         {
                             if( contig_begin[i] >contig_0 )
                             {
-                                contig_0 = contig_begin[0] ;
+                                contig_0 = contig_begin[i] ;
                             }
                             if( contig_end[i] < contig_1 || contig_1 == -1 )
                             {
@@ -91,7 +93,7 @@ BEGIN {
                             }
                         }
                     }
-                    printf("%d\t%d\t%d\t%d\t%s\t%s\t%s\t%s\n",
+                    printf("%d\t%d\t%d\t%d\t%s\t%s\t%s\t\t%s\n",
                             ref_final_begin,
                             ref_final_end,
                             contig_0,
@@ -135,6 +137,15 @@ BEGIN {
         {
 # save local details 
             array_2[arrayIndex]=$0;
+
+            total_map = total_map + 1 ;
+            arrayIndex = arrayIndex + 1 ;
+        }
+    }
+    else
+    {
+# save curr contig map information
+        array_1[arrayIndex] = $0
 # save info details for chain merge.
             ref_begin[arrayIndex]=$1;
             ref_end[arrayIndex]=$2;
@@ -144,15 +155,6 @@ BEGIN {
             contig[arrayIndex]=$6;
             ambi[arrayIndex]=$7;
             best[arrayIndex]=$8;
-
-            total_map = total_map + 1 ;
-        }
-    }
-    else
-    {
-# save curr contig map information
-        array_1[arrayIndex] = $0
-        arrayIndex = arrayIndex + 1 ;
     }
 }
 END {
